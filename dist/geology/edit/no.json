@@ -1,0 +1,247 @@
+{
+  "fieldsets" : [
+    "Kjernedata",
+    "Personer",
+    "Grupper",
+    "Lenker",
+    "Endringer"
+  ],
+  "fields": {
+    "research_station": {
+      "title": "forskningsstasjon",
+       "values": [
+        "Troll",
+        "Sverdrup"
+      ]
+    },
+    "research_type": {
+      "title": "arbeidsoppgaver",
+      "values": [
+        "forskning",
+        "monitorering",
+        "kartlegging",
+        "informasjonsvirksomhet/VIP",
+        "undervisning",
+        "logistikkoperasjoner",
+        "annet"
+      ]
+    },
+     "summary": {
+      "title": "beskrivelse"
+    },
+     "title": {
+      "title": "tittel forskningsprosjekt eller annen tittel"
+    },
+     "topics": {
+      "title": "emner",
+      "values": [
+        "passer ikke",
+        "forsuring",
+        "atmosfære",
+        "biologi",
+        "biokjemi",
+        "biodiversitet",
+        "kjemi",
+        "klima",
+        "konservering",
+        "økologi",
+        "økotoksikologi",
+        "miljø",
+        "geologi",
+        "geofysikk",
+        "glasiologi",
+        "historie",
+        "menneskelige perspektiver",
+        "ledelse",
+        "marine",
+        "marine økosystemer",
+        "kart",
+        "oseanografi",
+        "annet",
+        "paleoklima",
+        "fjernmåling",
+        "havis",
+        "snø",
+        "terrestrisk",
+        "topografi",
+        "vegetasjon"
+      ]
+    },
+    "stay_dates": {
+      "title":"gruppe oppholdsdatoer (påkrevd)",
+      "items": {
+        "fields": {
+          "start_date": {
+           "title":"ankomst dato (påkrevd)"
+          },
+          "end_date": {
+           "title":"avreise dato (påkrevd)"
+          }
+        }
+      }
+      },
+    "released": {
+      "title": "utgivelsesdato"
+    },
+    "links": {
+      "title": "lenker",
+      "items": {
+        "fields": {
+          "href":{
+            "title":"weblenke inkludert protokoll (f.eks. http:// som i lenken http://www.npolar.no)(påkrevd)"
+          },
+          "rel": {
+            "title": "lenke type (forbindelse mellom denne registreringen og lenke)(påkrevd)",
+            "values": [
+               "",
+              "program",
+              "datasett",
+              "ekspedisjon",
+              "prosjekt"
+              ]
+          },
+          "title": {
+            "title": "tittel på lenke (påkrevd)"
+          }
+        }
+      }
+    },
+    "people": {
+      "title": "personer",
+      "items": {
+        "fields": {
+          "first_name": {
+            "title": "fornavn (påkrevd)"
+          },
+          "last_name": {
+            "title": "etternavn (påkrevd)"
+          },
+          "roles": {
+            "title": "roller (velg alle aktuelle)(påkrevd)",
+            "values": [
+              "snekker",
+              "kokk",
+              "elektriker",
+               "ekspedisjonsleder",
+               "feltassistent",
+               "gjest",
+                "forsker",
+                "IT",
+                "KSAT",
+                "mekaniker",
+                "mekaniker TAF",
+                "annet",
+                "lege",
+                "pilot",
+                "forskningstekniker",
+                "sikkerhet",
+                "servicetekniker",
+                "transport",
+                "VIP"
+            ]
+          },
+            "station_dates": {
+      "title":"døgn på forskningstasjonen (påkrevd)",
+      "items": {
+        "fields": {
+           "accomodation": {
+           "title":"overnatting inkludert (påkrevd)"
+          },
+          "start_date": {
+           "title":"ankomst dato (påkrevd)"
+          },
+          "end_date": {
+           "title":"avreise dato (påkrevd)"
+          }
+        }
+      }
+      },
+          "organisation": {
+            "title": "organisasjon (påkrevd)"
+          },
+          "@country":{
+            "title": "land (påkrevd)"
+          }
+        }
+      }
+    },
+     "groups": {
+      "title": "grupper",
+      "items": {
+        "fields": {
+          "number_of_persons": {
+            "title": "antall personer (påkrevd)"
+          },
+          "roles": {
+            "title": "roller (velg alle aktuelle)(påkrevd)",
+            "values": [
+              "snekker",
+              "kokk",
+              "elektriker",
+               "ekspedisjonsleder",
+               "feltassistent",
+               "felt ansvarlig",
+                "forsker",
+                "IT",
+                "KSAT",
+                "mekaniker",
+                "mekaniker TAF",
+                "annet",
+                "lege",
+                "pilot",
+                "forskningstekniker",
+                "sikkerhetsansvarlig",
+                "servicetekniker",
+                "transport",
+                "VIP"
+            ]
+          },
+            "station_dates": {
+      "title":"døgn på forskningstasjonen (påkrevd)",
+      "items": {
+        "fields": {
+          "accomodation": {
+           "title":"overnatting inkludert (påkrevd)"
+          },
+          "start_date": {
+           "title":"ankomst dato (påkrevd)"
+          },
+          "end_date": {
+           "title":"avreise dato (påkrevd)"
+          }
+        }
+      }
+      },
+          "organisation": {
+            "title": "organisasjon (påkrevd)"
+          },
+          "@country":{
+            "title": "land (påkrevd)"
+          }
+        }
+      }
+    },
+    "draft": {
+      "title": "kladd (er ikke del av statistikk)",
+      "values": [
+           "ja",
+           "nei"
+      ]
+    },
+    "created": {
+      "title": "opprettet"
+    },
+    "created_by": {
+      "title": "opprettet av"
+    },
+    "updated": {
+      "title": "oppdatert"
+    },
+    "updated_by": {
+      "title": "oppdatert av"
+    },
+    "comment": {
+      "title": "kommentar til større endringer i registreringen"
+    }
+  }
+}
