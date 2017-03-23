@@ -55,10 +55,9 @@ var GeologicalSampleShowController = function($controller, $routeParams,
       $scope.mapOptions.coverage = [[[geologicalSample.latitude,geologicalSample.longitude],[geologicalSample.latitude,geologicalSample.longitude]]];
       $scope.mapOptions.geojson = "geojson";
 
-      //$scope.document.research_type =  convert($scope.document.research_type);
+      $scope.document.lithology =  convert($scope.document.lithology);
 
-
-
+/*
       $scope.links = geologicalSample.links.filter(l => (l.rel !== "alternate" && l.rel !== "edit") && l.rel !== "data");
       $scope.data = geologicalSample.links.filter(l => l.rel === "data");
       // or in files
@@ -75,9 +74,10 @@ var GeologicalSampleShowController = function($controller, $routeParams,
         }
         return a;
       });
+*/
 
 
-      $scope.uri = uri(geologicalSample);
+ /*     $scope.uri = uri(geologicalSample);
 
       let relatedDatasets = Dataset.array({
         q: geologicalSample.title,
@@ -104,7 +104,7 @@ var GeologicalSampleShowController = function($controller, $routeParams,
 
       $q.all([relatedDatasets, relatedPublications, relatedProjects]).then(related => {
         $scope.related = related;
-      });
+      }); */
 
     });
 

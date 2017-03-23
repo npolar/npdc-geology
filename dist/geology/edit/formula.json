@@ -45,10 +45,6 @@
             "id": "last_name",
             "title": "last name"
           },
-           {
-            "id": "email",
-            "title": "email"
-         },
           {
             "id":"organisation",
             "title": "organisation"

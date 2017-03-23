@@ -8,61 +8,43 @@
 
  <h1>
   <span class="md-display-2">{{ document.lithology }} </span><span style={font-size:15%}>
-  [{{document.title}/{document.original_sample_name}}]</span></h1>
+  [{{document.title}}/{{document.original_sample_name}}]</span></h1>
 
   <section>
-    {{document.sample_description}}
-     {{document.thin_section}}
+     <p ><md-icon>place</md-icon>
+        {{document['@placename']}} [{{document.latitude}}, {{document.longitude}}]</p>
 
-      <div ng-if="document.analysis" ng-repeat="item in document.analysis">
-            </p> {{ item.items }}</p>
-        </div>
+    <p ng-if="document.thin_section">
+          Sample description: {{document.sample_description}}</p>
+    <p ng-if="document.collected_year">
+          Collected year: {{document.collected_year}} [{{document.expedition}}]</p>
+    <p ng-if="document.thin_section">Thin section number: {{document.thin_section}}</p>
+      <p ng-if="document.analysis">Analysis:
+      <span ng-repeat="item in document.analysis" class="nowrap">
+            {{ item }} &nbsp;&nbsp;
+     </span> </p>
+     <p ng-if="document.thin_section">
+          Comment: {{document.sample_comment}}</p>
   </section>
 
-
-      <section>
-      <p ><md-icon>place</md-icon>
-        {{document.placename}}</p>
-
-      </section>
-
-      <section ng-if="document.summary">
-          <md-divider></md-divider>
-        <h3>{{ 'Summary' | t }}</h3>
-
-        <p marked="document.summary"></p>
-      </section>
-
-
-<section ng-if="document.people && document.people.length > 0">
-  <h3>{{ 'People' | t }}</h3>
-  <md-divider></md-divider>
+<section ng-if="document.last_name && document.last_name.length > 0">
+  <h3>{{ 'Person' | t }}</h3>
+ <md-divider></md-divider>
   <md-list>
-    <md-list-item class="md-2-line" ng-repeat="person in document.people">
-      <md-icon class="md-avatar-icon">person</md-icon>
-        <div class="md-list-item-text">
-          <h3> {{ person.first_name }} {{ person.last_name }} </h3>
-          <p> {{ person.organisation }}&nbsp;{{ person.country }} </p>
-          <p ng-if="person.roles"><span ng-repeat="r in person.roles">{{ r | t }}<span ng-if="!$last">, </span></span></p>
-          <div ng-repeat="dates in person.station_dates">
-           <p ng-if="dates.accomodation">{{ (dates.start_date).substr(0,10) }} - {{ (dates.end_date).substr(0,10)}} (with accomodation)</p>
-           <p ng-if="!dates.accomodation">{{ (dates.start_date).substr(0,10) }} - {{ (dates.end_date).substr(0,10)}} (without accomodation)</p>
-         </div>
-        </div>
-      </md-list-item>
+      <p> <md-icon class="md-avatar-icon">person</md-icon>
+          {{ document.first_name }} {{ document.last_name }}, {{ document.organisation }} </p>
     </md-list>
 </section>
 
- <npdc:organisations></npdc:organisations>
 
 
 
  <section>
-  <div ng-if="links.length > 0">
+  <div ng-if="document.links.length > 0">
     <h3>{{ 'Links' | t }}</h3>
     <md-divider></md-divider>
     <md-list>
-      <md-list-item class="md-2-line" ng-repeat="link in links">
+      <md-list-item class="md-2-line" ng-repeat="link in document.links">
         <div class="md-list-item-text">
           <a ng-href="{{link.href}}">{{ link.title || link.href }}</a>
           <p>{{ link.rel }}</p>
