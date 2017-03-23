@@ -5,15 +5,13 @@
 <div class="np-padding">
   <div ng-if="document" class="np-doc">
 
-    <h3>{{ 'Geological samples archive' | t }}</h3>
 
  <h1>
-  <span class="md-display-2">{{ document.title }} </span><span style={font-size:15%}>
-  [{{document.original_sample_name}}]</span></h1>
+  <span class="md-display-2">{{ document.lithology }} </span><span style={font-size:15%}>
+  [{{document.title}/{document.original_sample_name}}]</span></h1>
 
   <section>
     {{document.sample_description}}
-    {{document.lithology}}
      {{document.thin_section}}
 
       <div ng-if="document.analysis" ng-repeat="item in document.analysis">

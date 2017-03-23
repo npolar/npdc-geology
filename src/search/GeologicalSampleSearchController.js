@@ -8,7 +8,7 @@ var GeologicalSampleSearchController = function ($scope, $location, $controller,
   $scope.resource = GeologicalSample;
 
    npdcAppConfig.search.local.results.detail = (entry) => {
-     let r = (entry.placename) + ", " + (entry.collected_year);
+     let r = (entry.title) + " - " +(entry.placename) + ", " + (entry.collected_year);
      return r;
  };
 
@@ -21,8 +21,8 @@ var GeologicalSampleSearchController = function ($scope, $location, $controller,
     let defaults = {
       limit: "50",
       sort: "-updated",
-      fields: 'title,id,collected_year,collection,placename',
-      facets: 'title,collected_year'};
+      fields: 'lithology,title,id,collected_year,collection,@placename',
+      facets: 'lithology,title,collected_year'};
 
     let invariants = $scope.security.isAuthenticated() ? {} : {} ;
     return Object.assign({}, defaults, invariants);

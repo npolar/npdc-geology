@@ -20,13 +20,13 @@
     "fields": [
        {
         "id": "@placename",
-        "title": "placename where the sample was found"
+        "title": "placename where sample was found"
        },
         "latitude",
         "longitude",
        {
         "id": "collected_year",
-        "title": "year the sample was collected"
+        "title": "year sample was collected"
        },
        "expedition",
         {

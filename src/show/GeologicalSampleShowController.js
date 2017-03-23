@@ -40,29 +40,24 @@ var GeologicalSampleShowController = function($controller, $routeParams,
     }
   };
 
+
+
+  //Show map in Antarctica
   $scope.mapOptions = {};
+  $scope.mapOptions.color = "#FF0000";
+
 
   let show = function() {
 
     $scope.show().$promise.then((geologicalSample) => {
-      $scope.document.research_type =  convert($scope.document.research_type);
 
-
-      //Location on map should be the research station
-      var bounds =[];
-      switch($scope.document.research_station) {
-        case 'sverdrup':
-            bounds = [[[78.91,11.93],[78.91,11.93]]];
-            break;
-        case 'norvegia':
-           // bounds = [[[-54.40, 3.28],[-54.40, 3.28]]];
-             bounds = [[[-54.4097, 3.2886889],[-54.4097, 3.2886889]]];
-            break;
-        default: //troll
-            bounds = [[[-72.01, 2.53],[-72.01, 2.53]]];
-      }
-      $scope.mapOptions.coverage = bounds;
+      //Overlay the map with lat,lng
+      $scope.mapOptions.coverage = [[[geologicalSample.latitude,geologicalSample.longitude],[geologicalSample.latitude,geologicalSample.longitude]]];
       $scope.mapOptions.geojson = "geojson";
+
+      //$scope.document.research_type =  convert($scope.document.research_type);
+
+
 
       $scope.links = geologicalSample.links.filter(l => (l.rel !== "alternate" && l.rel !== "edit") && l.rel !== "data");
       $scope.data = geologicalSample.links.filter(l => l.rel === "data");
