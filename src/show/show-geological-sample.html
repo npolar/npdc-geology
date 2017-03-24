@@ -11,7 +11,7 @@
   [{{document.title}}/{{document.original_sample_name}}]</span></h1>
 
   <section>
-     <p ><md-icon>place</md-icon>
+     <p ng-if="document['@placename'] || document.latitude" ><md-icon>place</md-icon>
         {{document['@placename']}} [{{document.latitude}}, {{document.longitude}}]</p>
 
     <p ng-if="document.thin_section">
@@ -23,7 +23,7 @@
       <span ng-repeat="item in document.analysis" class="nowrap">
             {{ item }} &nbsp;&nbsp;
      </span> </p>
-     <p ng-if="document.thin_section">
+     <p ng-if="document.sample_comment">
           Comment: {{document.sample_comment}}</p>
   </section>
 

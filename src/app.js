@@ -10,6 +10,7 @@ var npdcGeologicalSampleApp = angular.module('npdcGeologicalSampleApp', ['npdcCo
 npdcGeologicalSampleApp.controller('GeologicalSampleShowController', require('./show/GeologicalSampleShowController'));
 npdcGeologicalSampleApp.controller('GeologicalSampleSearchController', require('./search/GeologicalSampleSearchController'));
 npdcGeologicalSampleApp.controller('GeologicalSampleEditController', require('./edit/GeologicalSampleEditController'));
+npdcGeologicalSampleApp.factory('GeologicalSample', require('./GeologicalSample.js'));
 
 // Bootstrap ngResource models using NpolarApiResource
 var resources = [
@@ -19,7 +20,7 @@ var resources = [
   {'path': '/project', 'resource': 'Project'},
   {'path': '/expedition', 'resource': 'Expedition'},
   {'path': '/publication', 'resource': 'Publication'},
-  {'path': '/geology/sample', 'resource': 'GeologicalSample'}
+  {'path': '/geology/sample', 'resource': 'GeologicalSampleResource'}
 ];
 
 resources.forEach(service => {

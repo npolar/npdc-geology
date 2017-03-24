@@ -5,12 +5,14 @@ var GeologicalSampleEditController = function($scope, $controller, $routeParams,
   NpolarApiSecurity, npolarCountryService, NpolarMessage) {
   'ngInject';
 
+   function init() {
+
   // EditController -> NpolarEditController
   $controller('NpolarEditController', {
     $scope: $scope
   });
 
-  // StationBooking -> npolarApiResource -> ngResource
+  // GeologySample -> npolarApiResource -> ngResource
   $scope.resource = GeologicalSample;
 
   let templates = [];
@@ -32,6 +34,8 @@ var GeologicalSampleEditController = function($scope, $controller, $routeParams,
     languages: npdcAppConfig.formula.languages.concat(i18n)
    });
 
+   initFileUpload($scope.formula);
+
   /*formulaAutoCompleteService.autocomplete({
     match: "@placename",
     querySource: 'https://api.npolar.no/placename',
@@ -39,7 +43,7 @@ var GeologicalSampleEditController = function($scope, $controller, $routeParams,
     value: 'code'
   }, $scope.formula); */
 
-  let autocompleteFacets = ["people.first_name", "people.last_name"];
+  let autocompleteFacets = ["first_name", "last_name","organisation"];
   formulaAutoCompleteService.autocompleteFacets(autocompleteFacets, GeologicalSample, $scope.formula);
 
 
@@ -53,8 +57,40 @@ var GeologicalSampleEditController = function($scope, $controller, $routeParams,
     return field.path.match(/_date$/);
  }, format: '{date}'});
 
+}
 
-   $scope.edit();
+
+function initFileUpload(formula) {
+
+    let server = `${NpolarApiSecurity.canonicalUri($scope.resource.path)}/restricted/:id/_file`;
+
+    fileFunnelService.fileUploader({
+      match(field) {
+        return field.id === "files";
+      },
+      server,
+      multiple: true,
+      progress: false,
+       restricted: function () {
+        return formula.getModel().restricted;
+      },
+      fileToValueMapper: GeologicalSample.fileObject,
+      valueToFileMapper: GeologicalSample.hashiObject,
+      fields: ['filename'] // 'type', 'hash'
+    }, formula);
+}
+
+  try {
+    init();
+
+     // edit (or new) action
+     $scope.edit();
+
+  } catch (e) {
+    NpolarMessage.error(e);
+  }
+
+
 };
 
 module.exports = GeologicalSampleEditController;

@@ -11,24 +11,8 @@ var GeologicalSampleShowController = function($controller, $routeParams,
   $scope.resource = GeologicalSample;
 
 
-  let authors = (geologicalSample) => {
 
-    var folks = [];
-    var orgs = [];
-
-    if (geologicalSample.people instanceof Array) {
-      folks = geologicalSample.people.filter(p => p.roles.includes("author"));
-    }
-
-    if (folks.length === 0 && geologicalSample.organisations instanceof Array) {
-      orgs = geologicalSample.organisations.filter(o => o.roles.includes("author"));
-    }
-    return folks.concat(orgs);
-
-  };
-
-
-
+/*
   let uri = (geologicalSample) => {
     let link = geologicalSample.links.find(l => {
       return l.rel === "alternate" && (/html$/).test(l.type);
@@ -39,6 +23,7 @@ var GeologicalSampleShowController = function($controller, $routeParams,
       return `https://data.npolar.no/geology/sample/${ geologicalSample.id }`;
     }
   };
+*/
 
 
 
@@ -56,55 +41,6 @@ var GeologicalSampleShowController = function($controller, $routeParams,
       $scope.mapOptions.geojson = "geojson";
 
       $scope.document.lithology =  convert($scope.document.lithology);
-
-/*
-      $scope.links = geologicalSample.links.filter(l => (l.rel !== "alternate" && l.rel !== "edit") && l.rel !== "data");
-      $scope.data = geologicalSample.links.filter(l => l.rel === "data");
-      // or in files
-
-      $scope.alternate = geologicalSample.links.filter(l => ((l.rel === "alternate") || l.rel === "edit")).concat({
-        href: `https://api.npolar.no/geology/sample/?q=&filter-id=${geologicalSample.id}&format=json`,
-        title: "DCAT (JSON-LD)",
-        type: "application/ld+json"
-      });
-
-      $scope.authors = authors(geologicalSample).map(a => {
-        if (!a.name && a.first_name) {
-          a.name = `${a.first_name} ${a.last_name}`;
-        }
-        return a;
-      });
-*/
-
-
- /*     $scope.uri = uri(geologicalSample);
-
-      let relatedDatasets = Dataset.array({
-        q: geologicalSample.title,
-        fields: 'id,title,collection',
-        score: true,
-        limit: 5,
-        'not-id': geologicalSample.id,
-        op: 'OR'
-      }).$promise;
-      let relatedPublications = Publication.array({
-        q: geologicalSample.title,
-        fields: 'id,title,published_sort,collection',
-        score: true,
-        limit: 5,
-        op: 'OR'
-      }).$promise;
-      let relatedProjects = Project.array({
-        q: geologicalSample.title,
-        fields: 'id,title,collection',
-        score: true,
-        limit: 5,
-        op: 'OR'
-      }).$promise;
-
-      $q.all([relatedDatasets, relatedPublications, relatedProjects]).then(related => {
-        $scope.related = related;
-      }); */
 
     });
 
