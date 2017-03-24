@@ -62,7 +62,7 @@ var GeologicalSampleEditController = function($scope, $controller, $routeParams,
 
 function initFileUpload(formula) {
 
-    let server = `${NpolarApiSecurity.canonicalUri($scope.resource.path)}/restricted/:id/_file`;
+    let server = `${NpolarApiSecurity.canonicalUri($scope.resource.path)}/:id/_file`;
 
     fileFunnelService.fileUploader({
       match(field) {
@@ -70,7 +70,7 @@ function initFileUpload(formula) {
       },
       server,
       multiple: true,
-      progress: false,
+      //progress: false,
        restricted: function () {
         return formula.getModel().restricted;
       },
