@@ -5,12 +5,13 @@ var AutoConfig = npdcCommon.AutoConfig;
 var angular = require('angular');
 require('npdc-common/src/wrappers/leaflet');
 
-var npdcGeologicalSampleApp = angular.module('npdcGeologicalSampleApp', ['npdcCommon','leaflet']);
+var npdcGeologySampleApp = angular.module('npdcGeologySampleApp', ['npdcCommon','leaflet']);
 
-npdcGeologicalSampleApp.controller('GeologicalSampleShowController', require('./show/GeologicalSampleShowController'));
-npdcGeologicalSampleApp.controller('GeologicalSampleSearchController', require('./search/GeologicalSampleSearchController'));
-npdcGeologicalSampleApp.controller('GeologicalSampleEditController', require('./edit/GeologicalSampleEditController'));
-npdcGeologicalSampleApp.factory('GeologicalSample', require('./GeologicalSample.js'));
+npdcGeologySampleApp.controller('GeologySampleShowController', require('./show/GeologySampleShowController'));
+npdcGeologySampleApp.controller('GeologySampleSearchController', require('./search/GeologySampleSearchController'));
+npdcGeologySampleApp.controller('GeologySampleEditController', require('./edit/GeologySampleEditController'));
+npdcGeologySampleApp.directive('geologySampleCoverage', require('./edit/coverage/coverageDirective'));
+npdcGeologySampleApp.factory('GeologySample', require('./GeologySample.js'));
 
 // Bootstrap ngResource models using NpolarApiResource
 var resources = [
@@ -20,20 +21,20 @@ var resources = [
   {'path': '/project', 'resource': 'Project'},
   {'path': '/expedition', 'resource': 'Expedition'},
   {'path': '/publication', 'resource': 'Publication'},
-  {'path': '/geology/sample', 'resource': 'GeologicalSampleResource'}
+  {'path': '/geology/sample', 'resource': 'GeologySampleResource'}
 ];
 
 resources.forEach(service => {
   // Expressive DI syntax is needed here
-  npdcGeologicalSampleApp.factory(service.resource, ['NpolarApiResource', function (NpolarApiResource) {
+  npdcGeologySampleApp.factory(service.resource, ['NpolarApiResource', function (NpolarApiResource) {
   return NpolarApiResource.resource(service);
   }]);
 });
 
 // Routing
-npdcGeologicalSampleApp.config(require('./router'));
+npdcGeologySampleApp.config(require('./router'));
 
-npdcGeologicalSampleApp.config(($httpProvider, npolarApiConfig) => {
+npdcGeologySampleApp.config(($httpProvider, npolarApiConfig) => {
   var autoconfig = new AutoConfig("production");
   angular.extend(npolarApiConfig, autoconfig, { resources });
   console.debug("npolarApiConfig", npolarApiConfig);
@@ -41,7 +42,7 @@ npdcGeologicalSampleApp.config(($httpProvider, npolarApiConfig) => {
   $httpProvider.interceptors.push('npolarApiInterceptor');
 });
 
-npdcGeologicalSampleApp.run(($http, npdcAppConfig, NpolarTranslate, NpolarLang) => {
+npdcGeologySampleApp.run(($http, npdcAppConfig, NpolarTranslate, NpolarLang) => {
   NpolarTranslate.loadBundles('npdc-geology');
   npdcAppConfig.toolbarTitle = 'Geological samples archive from the Norwegian polar areas';
 });

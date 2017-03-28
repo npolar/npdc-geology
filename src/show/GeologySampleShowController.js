@@ -1,14 +1,14 @@
 'use strict';
 
-var GeologicalSampleShowController = function($controller, $routeParams,
-  $scope, $q, GeologicalSample, npdcAppConfig, Dataset, Publication, Project) {
+var GeologySampleShowController = function($controller, $routeParams,
+  $scope, $q, GeologySample, npdcAppConfig, Dataset, Publication, Project) {
     'ngInject';
 
 
   $controller('NpolarBaseController', {
     $scope: $scope
   });
-  $scope.resource = GeologicalSample;
+  $scope.resource = GeologySample;
 
 
 
@@ -34,10 +34,10 @@ var GeologicalSampleShowController = function($controller, $routeParams,
 
   let show = function() {
 
-    $scope.show().$promise.then((geologicalSample) => {
+    $scope.show().$promise.then((geologySample) => {
 
       //Overlay the map with lat,lng
-      $scope.mapOptions.coverage = [[[geologicalSample.latitude,geologicalSample.longitude],[geologicalSample.latitude,geologicalSample.longitude]]];
+      $scope.mapOptions.coverage = [[[geologySample.latitude,geologySample.longitude],[geologySample.latitude,geologySample.longitude]]];
       $scope.mapOptions.geojson = "geojson";
 
       $scope.document.lithology =  convert($scope.document.lithology);
@@ -65,4 +65,4 @@ function convert(str) {
         return positions;
 }
 
-module.exports = GeologicalSampleShowController;
+module.exports = GeologySampleShowController;

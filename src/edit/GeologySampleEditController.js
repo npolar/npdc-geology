@@ -1,6 +1,6 @@
 'use strict';
 
-var GeologicalSampleEditController = function($scope, $controller, $routeParams, GeologicalSample, formula,
+var GeologySampleEditController = function($scope, $controller, $routeParams, GeologySample, formula,
   formulaAutoCompleteService, npdcAppConfig, chronopicService, fileFunnelService, NpolarLang, npolarApiConfig,
   NpolarApiSecurity, npolarCountryService, NpolarMessage) {
   'ngInject';
@@ -13,21 +13,22 @@ var GeologicalSampleEditController = function($scope, $controller, $routeParams,
   });
 
   // GeologySample -> npolarApiResource -> ngResource
-  $scope.resource = GeologicalSample;
+  $scope.resource = GeologySample;
 
   let templates = [];
 
-  let i18n = [{
-      map: require('./en.json'),
-      code: 'en'
-    },
+  let i18n = [
+  //{
+  //    map: require('./en.json'),
+  //    code: 'en'
+  //  },
     {
       map: require('./no.json'),
       code: 'nb_NO',
     }];
 
   $scope.formula = formula.getInstance({
-    schema: '//api.npolar.no/schema/geological-sample',
+    schema: '//api.npolar.no/schema/geology-sample',
     form: 'edit/formula.json',
     language: NpolarLang.getLang(),
     templates: npdcAppConfig.formula.templates.concat(templates),
@@ -44,7 +45,7 @@ var GeologicalSampleEditController = function($scope, $controller, $routeParams,
   }, $scope.formula); */
 
   let autocompleteFacets = ["first_name", "last_name","organisation"];
-  formulaAutoCompleteService.autocompleteFacets(autocompleteFacets, GeologicalSample, $scope.formula);
+  formulaAutoCompleteService.autocompleteFacets(autocompleteFacets, GeologySample, $scope.formula);
 
 
  // chronopicService.defineOptions({ match: 'released', format: '{date}'});
@@ -74,8 +75,8 @@ function initFileUpload(formula) {
        restricted: function () {
         return formula.getModel().restricted;
       },
-      fileToValueMapper: GeologicalSample.fileObject,
-      valueToFileMapper: GeologicalSample.hashiObject,
+      fileToValueMapper: GeologySample.fileObject,
+      valueToFileMapper: GeologySample.hashiObject,
       fields: ['filename'] // 'type', 'hash'
     }, formula);
 }
@@ -93,4 +94,4 @@ function initFileUpload(formula) {
 
 };
 
-module.exports = GeologicalSampleEditController;
+module.exports = GeologySampleEditController;

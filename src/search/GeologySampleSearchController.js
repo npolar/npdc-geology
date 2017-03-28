@@ -1,11 +1,11 @@
 'use strict';
 
 
-var GeologicalSampleSearchController = function ($scope, $location, $controller, $filter, GeologicalSample, npdcAppConfig,  NpdcSearchService, NpolarTranslate) {
+var GeologySampleSearchController = function ($scope, $location, $controller, $filter, GeologySample, npdcAppConfig,  NpdcSearchService, NpolarTranslate) {
   'ngInject';
 
   $controller('NpolarBaseController', { $scope: $scope });
-  $scope.resource = GeologicalSample;
+  $scope.resource = GeologySample;
 
    npdcAppConfig.search.local.results.detail = (entry) => {
      let r = (entry.title) + " - " +(entry.placename) + ", " + (entry.collected_year);
@@ -36,5 +36,5 @@ var GeologicalSampleSearchController = function ($scope, $location, $controller,
 
 };
 
-module.exports = GeologicalSampleSearchController;
+module.exports = GeologySampleSearchController;
 
