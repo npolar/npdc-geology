@@ -22,16 +22,13 @@
         <md-list>
         <!-- added ned link -->
           <md-list-item class="md-2-line" ng-repeat="e in feed.entries" ng-href="sample/{{ e.id }}">
-
-              <img class="md-avatar" ng-src={{icon(e)}} title="ID: {{ e.id }}" >
-
+               <img class="md-avatar" src="{{e.files[0].uri}}" alt="{{ e.files[0].filename }}"  title="ID: {{ e.id }}" >
 
             <div class="md-list-item-text">
               <h3 class="md-headline">
              <!--   <span md-highlight-text="q()" md-highlight-flags="ig">{{e.title}}</span> -->
-             <h3 ng-if="e.lithology">{{ e.lithology | t }} <em ng-if="e.collected_year">「{{ e.title | t }}」</em></h3>
-              </h3>
-              <h4>{{ e['@placename'] | t }}, {{ (e.collected_year).substring(0,10) }}</h4>
+             <h3 ng-if="e.title"> {{ e.lithology | t }}<em ng-if="e.title">「{{ e.title | t }}」</em></h3>
+              <h4 ng-if="e['@placename']">{{ e['@placename'] | t }}, {{ (e.collected_year).substring(0,10) }}</h4>
             </div>
 
           </md-list-item>

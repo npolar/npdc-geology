@@ -21,7 +21,7 @@ var GeologySampleSearchController = function ($scope, $location, $controller, $f
     let defaults = {
       limit: "50",
       sort: "-updated",
-      fields: 'lithology,title,id,collected_year,collection,@placename',
+      fields: 'lithology,title,id,collected_year,collection,@placename,files',
       facets: 'lithology,title,collected_year'};
 
     let invariants = $scope.security.isAuthenticated() ? {} : {} ;

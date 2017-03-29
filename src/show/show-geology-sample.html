@@ -6,13 +6,18 @@
   <div ng-if="document" class="np-doc">
 
 
- <h1>
+    <h1>
+          <a ng-repeat="file in document.files" ng-href="{{file.uri}}"><img src="{{file.uri}}" alt="{{ file.filename }}" style="width:152px;height:114px;"></a>
   <span class="md-display-2">{{ document.lithology }} </span><span style={font-size:15%}>
-  [{{document.title}}/{{document.original_sample_name}}]</span></h1>
+[{{document.title}}]</span></h1>
 
   <section>
-     <p ng-if="document['@placename'] || document.latitude" ><md-icon>place</md-icon>
-        {{document['@placename']}} [{{document.latitude}}, {{document.longitude}}]</p>
+     <p ng-if="document['@placename'] || document['latitude']" >
+     <md-icon>place</md-icon>{{document['@placename']}} &nbsp; [{{document.latitude}}, {{document.longitude}}]</p>
+    <p ng-if="document.position_accuracy">
+          Position accuracy: {{document.position_accuracy}}</p>
+    <p ng-if="document.original_sample_name">
+          Field sample name: {{document.original_sample_name}}</p>
 
     <p ng-if="document.thin_section">
           Sample description: {{document.sample_description}}</p>
@@ -27,6 +32,21 @@
           Comment: {{document.sample_comment}}</p>
   </section>
 
+ <!--  <section>
+  <div ng-if="document.files.length > 0">
+    <h3>{{ 'Pictures' | t }}</h3>
+    <md-divider></md-divider>
+    <md-list>
+      <md-list-item class="md-2-line" ng-repeat="file in document.files">
+        <div class="md-list-item-text">
+          <a ng-href="{{file.uri}}"><img src="{{file.uri}}" alt="{{ file.filename }}" style="width:152px;height:114px;"></a>
+        </div>
+      </md-list-item>
+    </md-list>
+  </div>
+  </section> -->
+
+
 <section ng-if="document.last_name && document.last_name.length > 0">
   <h3>{{ 'Person' | t }}</h3>
  <md-divider></md-divider>
@@ -35,8 +55,6 @@
           {{ document.first_name }} {{ document.last_name }}, {{ document.organisation }} </p>
     </md-list>
 </section>
-
-
 
 
  <section>

@@ -25,6 +25,10 @@
         "latitude",
         "longitude",
        {
+        "id":"position_accuracy",
+        "title":"position accuracy"
+       },
+       {
         "id": "collected_year",
         "title": "year sample was collected"
        },
@@ -84,6 +88,10 @@
   {
     "title": "Edits",
     "fields": [
+       {
+        "id": "draft",
+        "title": "Is this a draft (not visible to Internet users)?"
+       },
       {
         "id": "created",
         "disabled": true

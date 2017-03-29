@@ -5,14 +5,11 @@ function GeologySample( $q, GeologySampleResource) {
 
 
   GeologySampleResource.create = function() {
-
       let lang = 'en';
       let collection = "geology";
       let schema = 'http://api.npolar.no/schema/geology-sample';
-
       let e = {  lang, collection, schema };
       console.debug(e);
-
       return e;
 
     };
