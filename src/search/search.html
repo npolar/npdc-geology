@@ -17,26 +17,25 @@
 
     <section>
       <npdc:loader ng-if="!feed.entries"></npdc:loader>
-
+  <div ng-if="security.isAuthorized('create', base_user)">
        <div class="np-layout-list">
         <md-list>
         <!-- added ned link -->
-          <md-list-item class="md-2-line" ng-repeat="e in feed.entries" ng-href="sample/{{ e.id }}">
-               <img class="md-avatar" src="{{e.files[0].uri}}" alt="{{ e.files[0].filename }}"  title="ID: {{ e.id }}" >
 
+          <md-list-item class="md-2-line" ng-repeat="e in feed.entries" ng-href="sample/{{ e.id }}">
+               <img class="md-avatar" src="{{e.files[0].uri}}" alt="{{ e.files[0].filename }}"  title="ID: {{ e.id }}" />
             <div class="md-list-item-text">
               <h3 class="md-headline">
              <!--   <span md-highlight-text="q()" md-highlight-flags="ig">{{e.title}}</span> -->
              <h3 ng-if="e.title"> {{ e.lithology | t }}<em ng-if="e.title">「{{ e.title | t }}」</em></h3>
               <h4 ng-if="e['@placename']">{{ e['@placename'] | t }}, {{ (e.collected_year).substring(0,10) }}</h4>
             </div>
-
           </md-list-item>
+
         </md-list>
         <md-divider></md-divider>
-      </div>
-
-      <div layout-padding>
+         </div>
+          <div layout-padding>
         <div ng-if="feed.opensearch.totalResults > 0" layout layout-align="space-between center">
           <div style="line-height: 48px;">{{feed.opensearch.totalResults}}
             results, displaying
@@ -47,6 +46,32 @@
         </div>
         <div ng-if="feed.opensearch.totalResults == 0">{{ 'search.no_results' | t}} "{{q()}}"</div>
       </div>
+
+      </div>
+
+<!-- added ned link -->
+        <div ng-if="!security.isAuthorized('create', base_user)">
+<div class="np-layout-list">
+        <md-list>
+
+          <md-list-item class="md-2-line" ng-repeat="e in feed.entries" ng-href="sample/{{ e.id }}" ng-if="e.draft != 'yes'">
+
+               <img class="md-avatar" src="{{e.files[0].uri}}" alt="{{ e.files[0].filename }}"  title="ID: {{ e.id }}" />
+
+            <div class="md-list-item-text">
+              <h3 class="md-headline">
+             <!--   <span md-highlight-text="q()" md-highlight-flags="ig">{{e.title}}</span> -->
+             <h3 ng-if="e.title"> {{ e.lithology | t }}<em ng-if="e.title">「{{ e.title | t }}」</em></h3>
+              <h4 ng-if="e['@placename']">{{ e['@placename'] | t }}, {{ (e.collected_year).substring(0,10) }}</h4>
+            </div>
+          </md-list-item>
+        </md-list>
+        <md-divider></md-divider>
+      </div>
+      </div>
+
+
+
     </section>
   </md-content>
 </div>

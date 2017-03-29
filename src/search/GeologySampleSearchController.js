@@ -1,7 +1,7 @@
 'use strict';
 
 
-var GeologySampleSearchController = function ($scope, $location, $controller, $filter, GeologySample, npdcAppConfig,  NpdcSearchService, NpolarTranslate) {
+var GeologySampleSearchController = function ($scope, $location, $controller, $filter, NpolarApiSecurity, GeologySample, npdcAppConfig,  NpdcSearchService, NpolarTranslate) {
   'ngInject';
 
   $controller('NpolarBaseController', { $scope: $scope });
@@ -21,7 +21,7 @@ var GeologySampleSearchController = function ($scope, $location, $controller, $f
     let defaults = {
       limit: "50",
       sort: "-updated",
-      fields: 'lithology,title,id,collected_year,collection,@placename,files',
+      fields: 'lithology,title,id,collected_year,collection,@placename,files,draft',
       facets: 'lithology,title,collected_year'};
 
     let invariants = $scope.security.isAuthenticated() ? {} : {} ;
@@ -29,6 +29,10 @@ var GeologySampleSearchController = function ($scope, $location, $controller, $f
   };
 
   $scope.search(query());
+
+  $scope.security = NpolarApiSecurity;
+  $scope.base_user = NpolarApiSecurity.canonicalUri('/geology');
+
 
   $scope.$on('$locationChangeSuccess', (event, data) => {
     $scope.search(query());
