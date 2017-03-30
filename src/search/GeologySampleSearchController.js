@@ -20,7 +20,7 @@ var GeologySampleSearchController = function ($scope, $location, $controller, $f
   let query = function() {
     let defaults = {
       limit: "50",
-      sort: "-updated",
+      sort: "-draft='no',updated", //non-drafts should be viewed first
       fields: 'lithology,title,id,collected_year,collection,@placename,files,draft',
       facets: 'lithology,title,collected_year'};
 
