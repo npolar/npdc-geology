@@ -32,27 +32,15 @@
         "id": "collected_year",
         "title": "year sample was collected"
        },
+       {
+        "id": "geologist",
+        "title": "geologist"
+       },
        "expedition",
         {
         "id": "sample_comment",
         "title": "sample comment"
        }
-    ]},
-    {
-    "title": "Person",
-    "fields": [
-          {
-            "id": "first_name",
-            "title": "first name"
-          },
-          {
-            "id": "last_name",
-            "title": "last name"
-          },
-          {
-            "id":"organisation",
-            "title": "organisation"
-          }
     ]},
    {
       "title": "Links",
