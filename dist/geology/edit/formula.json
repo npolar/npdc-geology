@@ -8,11 +8,19 @@
       },
       {
         "id": "original_sample_name",
-         "title": "sample field id"
+         "title": "original sample marking"
       },
-      "lithology",
+      {
+        "id": "lithology",
+        "title": "rock type"
+      },
       "sample_description",
+      {
+        "id": "cabinet_no",
+        "title": "box/cabinet no"
+      },
       "thin_section",
+      "fossil",
       "analysis"
      ]},
     {
@@ -20,13 +28,13 @@
     "fields": [
        {
         "id": "@placename",
-        "title": "placename where sample was found"
+        "title": "locality"
        },
         "latitude",
         "longitude",
        {
         "id":"position_accuracy",
-        "title":"position accuracy"
+        "title":"position type"
        },
        {
         "id": "collected_year",

@@ -12,8 +12,6 @@ var GeologySampleSearchController = function ($scope, $location, $controller, $f
      return r;
  };
 
-
-  npdcAppConfig.cardTitle = "Geological samples archive from the Norwegian polar areas";
   npdcAppConfig.search.local.results.subtitle = "type";
 
 

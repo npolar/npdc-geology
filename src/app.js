@@ -42,7 +42,11 @@ npdcGeologySampleApp.config(($httpProvider, npolarApiConfig) => {
   $httpProvider.interceptors.push('npolarApiInterceptor');
 });
 
-npdcGeologySampleApp.run(($http, npdcAppConfig, NpolarTranslate, NpolarLang) => {
+npdcGeologySampleApp.run(( npdcAppConfig, NpolarTranslate) => {
+  npdcAppConfig.help = { uri: 'https://github.com/npolar/npdc-geology/wiki' };
   NpolarTranslate.loadBundles('npdc-geology');
-  npdcAppConfig.toolbarTitle = 'Geological samples archive from the Norwegian polar areas';
 });
+
+//  NpolarTranslate.loadBundles('npdc-geology');
+//  npdcAppConfig.toolbarTitle = NpolarTranslate.translate('Norwegian polar geological sample archive');
+//});

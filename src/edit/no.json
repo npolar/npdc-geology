@@ -1,228 +1,103 @@
 {
   "fieldsets" : [
-    "Kjernedata",
-    "Personer",
-    "Grupper",
+    "Prøve",
+    "Ramme",
     "Lenker",
+    "Opplasting",
     "Endringer"
   ],
   "fields": {
-    "research_station": {
-      "title": "forskningsstasjon",
-       "values": [
-        "Troll",
-        "Sverdrup"
-      ]
+    "title": {
+      "title": "prøve id"
     },
-    "research_type": {
-      "title": "arbeidsoppgaver",
-      "values": [
-        "forskning",
-        "monitorering",
-        "kartlegging",
-        "informasjonsvirksomhet/VIP",
-        "undervisning",
-        "logistikkoperasjoner",
-        "annet"
-      ]
-    },
-     "summary": {
-      "title": "beskrivelse"
-    },
-     "title": {
-      "title": "tittel forskningsprosjekt eller annen tittel"
-    },
-     "topics": {
-      "title": "emner",
-      "values": [
-        "passer ikke",
-        "forsuring",
-        "atmosfære",
-        "biologi",
-        "biokjemi",
-        "biodiversitet",
-        "kjemi",
-        "klima",
-        "konservering",
-        "økologi",
-        "økotoksikologi",
-        "miljø",
-        "geologi",
-        "geofysikk",
-        "glasiologi",
-        "historie",
-        "menneskelige perspektiver",
-        "ledelse",
-        "marine",
-        "marine økosystemer",
-        "kart",
-        "oseanografi",
-        "annet",
-        "paleoklima",
-        "fjernmåling",
-        "havis",
-        "snø",
-        "terrestrisk",
-        "topografi",
-        "vegetasjon"
-      ]
-    },
-    "stay_dates": {
-      "title":"gruppe oppholdsdatoer (påkrevd)",
-      "items": {
-        "fields": {
-          "start_date": {
-           "title":"ankomst dato (påkrevd)"
-          },
-          "end_date": {
-           "title":"avreise dato (påkrevd)"
-          }
+     "original_sample_name": {
+      "title": "original merking på prøve"
+     },
+     "lithology": {
+       "title": "bergart"
+     },
+     "sample_description": {
+      "title": "beskrivelse av prøven"
+     },
+     "cabinet_no": {
+        "title": "kasse/skap nr"
+     },
+     "fossil": {
+        "title": "fossil"
+     },
+     "thin_section": {
+        "title": "tynnslip"
+     },
+     "analysis":{
+        "title": "analyser",
+         "items": {
+            "title":"type analyse"
         }
-      }
-      },
-    "released": {
-      "title": "utgivelsesdato"
-    },
+     },
+     "@placename":{
+        "title": "lokalitet"
+     },
+     "latitude":{
+        "title": "breddegrad"
+     },
+     "longitude":{
+        "title": "lengdegrad"
+     },
+     "position_accuracy":{
+        "title": "posisjonstype",
+        "values": [
+               "GPS",
+              "godt estimat",
+              "dårlig merket (satt til nærmeste stedsnavn)"
+              ]
+     },
+      "collected_year":{
+        "title": "året prøven ble samlet inn"
+     },
+     "geologist":{
+        "title": "geolog"
+     },
+      "expedition":{
+        "title": "ekspedisjon"
+     },
+      "sample_comment":{
+        "title": "kommentar til prøven"
+     },
     "links": {
       "title": "lenker",
       "items": {
         "fields": {
           "href":{
-            "title":"weblenke inkludert protokoll (f.eks. http:// som i lenken http://www.npolar.no)(påkrevd)"
+            "title":"weblenke inkludert protokoll (f.eks. http:// som i lenken http://www.npolar.no)"
           },
           "rel": {
-            "title": "lenke type (forbindelse mellom denne registreringen og lenke)(påkrevd)",
+            "title": "lenke type (forbindelse mellom denne registreringen og lenke)",
             "values": [
-               "",
-              "program",
+              "relatert",
+              "prosjekt",
+              "publikasjon",
               "datasett",
-              "ekspedisjon",
-              "prosjekt"
+              "ekspedisjon"
               ]
           },
           "title": {
-            "title": "tittel på lenke (påkrevd)"
+            "title": "tittel på lenke"
           }
         }
       }
     },
-    "people": {
-      "title": "personer",
-      "items": {
+     "files": {
+      "title": "last opp foto",
+       "items": {
         "fields": {
-          "first_name": {
-            "title": "fornavn (påkrevd)"
-          },
-          "last_name": {
-            "title": "etternavn (påkrevd)"
-          },
-          "roles": {
-            "title": "roller (velg alle aktuelle)(påkrevd)",
-            "values": [
-              "snekker",
-              "kokk",
-              "elektriker",
-               "ekspedisjonsleder",
-               "feltassistent",
-               "gjest",
-                "forsker",
-                "IT",
-                "KSAT",
-                "mekaniker",
-                "mekaniker TAF",
-                "annet",
-                "lege",
-                "pilot",
-                "forskningstekniker",
-                "sikkerhet",
-                "servicetekniker",
-                "transport",
-                "VIP"
-            ]
-          },
-            "station_dates": {
-      "title":"døgn på forskningstasjonen (påkrevd)",
-      "items": {
-        "fields": {
-           "accomodation": {
-           "title":"overnatting inkludert (påkrevd)"
-          },
-          "start_date": {
-           "title":"ankomst dato (påkrevd)"
-          },
-          "end_date": {
-           "title":"avreise dato (påkrevd)"
-          }
-        }
-      }
-      },
-          "organisation": {
-            "title": "organisasjon (påkrevd)"
-          },
-          "@country":{
-            "title": "land (påkrevd)"
-          }
-        }
-      }
-    },
-     "groups": {
-      "title": "grupper",
-      "items": {
-        "fields": {
-          "number_of_persons": {
-            "title": "antall personer (påkrevd)"
-          },
-          "roles": {
-            "title": "roller (velg alle aktuelle)(påkrevd)",
-            "values": [
-              "snekker",
-              "kokk",
-              "elektriker",
-               "ekspedisjonsleder",
-               "feltassistent",
-               "felt ansvarlig",
-                "forsker",
-                "IT",
-                "KSAT",
-                "mekaniker",
-                "mekaniker TAF",
-                "annet",
-                "lege",
-                "pilot",
-                "forskningstekniker",
-                "sikkerhetsansvarlig",
-                "servicetekniker",
-                "transport",
-                "VIP"
-            ]
-          },
-            "station_dates": {
-      "title":"døgn på forskningstasjonen (påkrevd)",
-      "items": {
-        "fields": {
-          "accomodation": {
-           "title":"overnatting inkludert (påkrevd)"
-          },
-          "start_date": {
-           "title":"ankomst dato (påkrevd)"
-          },
-          "end_date": {
-           "title":"avreise dato (påkrevd)"
-          }
-        }
-      }
-      },
-          "organisation": {
-            "title": "organisasjon (påkrevd)"
-          },
-          "@country":{
-            "title": "land (påkrevd)"
+          "filename":{
+            "title":"filnavn"
           }
         }
       }
     },
     "draft": {
-      "title": "kladd (er ikke del av statistikk)",
+      "title": "kladd (ikke synlig utad)",
       "values": [
            "ja",
            "nei"

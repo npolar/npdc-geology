@@ -35,16 +35,16 @@ var GeologySampleEditController = function($scope, $controller, $routeParams, Ge
     languages: npdcAppConfig.formula.languages.concat(i18n)
    });
 
-   initFileUpload($scope.formula);
+  initFileUpload($scope.formula);
 
-  /*formulaAutoCompleteService.autocomplete({
+  formulaAutoCompleteService.autocomplete({
     match: "@placename",
     querySource: 'https://api.npolar.no/placename',
-    label: 'name',
-    value: 'code'
-  }, $scope.formula); */
+    label: "name['@value']",
+    value: 'ident'
+  }, $scope.formula);
 
-  let autocompleteFacets = ["first_name", "last_name","organisation"];
+  let autocompleteFacets = ["geologist"];
   formulaAutoCompleteService.autocompleteFacets(autocompleteFacets, GeologySample, $scope.formula);
 
 

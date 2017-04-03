@@ -15,8 +15,8 @@ https://browser-update.org/update.min.js
 /assets/fullscreen.png
 /assets/fullscreen@2x.png
 /assets/material-icons.css
-/assets/npdc-common-4.9.9.css
-/assets/npdc-common-4.9.css
+/assets/npdc-common-4.10.2.css
+/assets/npdc-common-4.10.css
 /assets/npdc-common-4.css
 /assets/npdc-common-master-latest.css
 /assets/npdc-common.css
@@ -28,7 +28,6 @@ https://browser-update.org/update.min.js
 /geology/npdc-geology-0.css
 /geology/npdc-geology-master-latest.css
 /geology/npdc-geology.css
-/assets/edit/en.json
 /assets/edit/formula.json
 /assets/edit/no.json
 /assets/images/layers-2x.png
@@ -120,4 +119,4 @@ NETWORK:
 SETTINGS:
 prefer-online
 
-# hash: f3613e3ce01107681e072e4032d8147cb5ea3dcb439c29e8331dda72fda34f1e
+# hash: 8796b3e23606970ccb2b90705032b2a8953676ed7b30ff611c514a51be8dea4a
