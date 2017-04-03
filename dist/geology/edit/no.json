@@ -23,7 +23,11 @@
         "title": "kasse/skap nr"
      },
      "fossil": {
-        "title": "fossil"
+        "title": "fossil",
+         "values": [
+               "ja",
+              "nei"
+              ]
      },
      "thin_section": {
         "title": "tynnslip"
