@@ -40,7 +40,7 @@ var GeologySampleEditController = function($scope, $controller, $routeParams, Ge
   formulaAutoCompleteService.autocomplete({
     match: "@placename",
     querySource: 'https://api.npolar.no/placename',
-    label: "name['@value']",
+    label: ["name['@value']"],   // ["name['@value']"],
     value: 'ident'
   }, $scope.formula);
 

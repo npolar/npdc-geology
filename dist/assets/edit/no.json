@@ -52,11 +52,11 @@
         "values": [
               "GPS",
               "godt estimat",
-              "dårlig merket (satt til nærmeste stedsnavn)"
+              "lite kjent (satt til stedsnavn)"
               ]
      },
       "collected_year":{
-        "title": "året prøven ble samlet inn"
+        "title": "år"
      },
      "geologist":{
         "title": "geolog"

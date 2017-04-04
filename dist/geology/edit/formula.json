@@ -33,15 +33,21 @@
         "id": "@placename",
         "title": "locality"
        },
-        "latitude",
-        "longitude",
+       {
+        "id": "latitude",
+        "title": "latitude(N)"
+       },
+       {
+        "id": "longitude",
+        "title": "longitude(E)"
+       },
        {
         "id":"position_accuracy",
         "title":"position type"
        },
        {
         "id": "collected_year",
-        "title": "year sample was collected"
+        "title": "year"
        },
        {
         "id": "geologist",
