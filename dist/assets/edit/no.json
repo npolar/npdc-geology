@@ -1,7 +1,7 @@
 {
   "fieldsets" : [
     "Prøve",
-    "Ramme",
+    "Bakgrunn",
     "Lenker",
     "Opplasting",
     "Endringer"
@@ -30,7 +30,7 @@
               ]
      },
      "thin_section": {
-        "title": "tynnslip"
+        "title": "tynnslip nr"
      },
      "analysis":{
         "title": "analyser",
@@ -50,7 +50,7 @@
      "position_accuracy":{
         "title": "posisjonstype",
         "values": [
-               "GPS",
+              "GPS",
               "godt estimat",
               "dårlig merket (satt til nærmeste stedsnavn)"
               ]
@@ -103,8 +103,8 @@
     "draft": {
       "title": "kladd (ikke synlig utad)",
       "values": [
-           "ja",
-           "nei"
+           "nei",
+           "ja"
       ]
     },
     "created": {

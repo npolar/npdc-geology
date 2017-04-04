@@ -19,7 +19,10 @@
         "id": "cabinet_no",
         "title": "box/cabinet no"
       },
-      "thin_section",
+       {
+        "id": "thin_section",
+        "title": "thin section no"
+      },
       "fossil",
       "analysis"
      ]},
