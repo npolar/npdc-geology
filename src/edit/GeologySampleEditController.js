@@ -39,19 +39,15 @@ var GeologySampleEditController = function($scope, $controller, $routeParams, Ge
 
   formulaAutoCompleteService.autocomplete({
     match: "@placename",
-    querySource: 'https://api.npolar.no/placename',
-    label: ["name['@value']"],   // ["name['@value']"],
+    querySource: 'https://api.npolar.no/placename?q-name.@value=&format=json&filter-status=official',
+    //api.npolar.no/placename/?q=&filter-status=official&format=json&fields=type.id,name
+    label: 'name.@value',   // ["name['@value']"],
     value: 'ident'
   }, $scope.formula);
 
   let autocompleteFacets = ["geologist"];
   formulaAutoCompleteService.autocompleteFacets(autocompleteFacets, GeologySample, $scope.formula);
 
-
- // chronopicService.defineOptions({ match: 'released', format: '{date}'});
- // chronopicService.defineOptions({ match(field) {
- //   return field.path.match(/^#\/activity\/\d+\/.+/);
- // }, format: '{date}'});
 
 //Set chronopic view format (this does not change the internal value, i.e. ISO string date)
  chronopicService.defineOptions({ match(field) {

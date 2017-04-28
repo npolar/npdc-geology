@@ -42,10 +42,10 @@
         "title": "lokalitet"
      },
      "latitude":{
-        "title": "breddegrad"
+        "title": "breddegrad(N)"
      },
      "longitude":{
-        "title": "lengdegrad"
+        "title": "lengdegrad(Ø)"
      },
      "position_accuracy":{
         "title": "posisjonstype",
