@@ -42,7 +42,7 @@ var GeologySampleEditController = function($scope, $controller, $routeParams, Ge
     querySource: 'https://api.npolar.no/placename?q-name.@value=&format=json&filter-status=official',
     //api.npolar.no/placename/?q=&filter-status=official&format=json&fields=type.id,name
     label: 'name.@value',   // ["name['@value']"],
-    value: 'ident'
+    value: 'name.@value'
   }, $scope.formula);
 
   let autocompleteFacets = ["geologist"];
