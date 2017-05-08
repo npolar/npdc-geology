@@ -15,7 +15,7 @@ https://browser-update.org/update.min.js
 /assets/fullscreen.png
 /assets/fullscreen@2x.png
 /assets/material-icons.css
-/assets/npdc-common-4.10.2.css
+/assets/npdc-common-4.10.9.css
 /assets/npdc-common-4.10.css
 /assets/npdc-common-4.css
 /assets/npdc-common-master-latest.css
@@ -116,7 +116,4 @@ https://browser-update.org/update.min.js
 NETWORK:
 *
 
-SETTINGS:
-prefer-online
-
-# hash: 961ef619877216237331a4c94f28c01d4bd6b848b1c2b172e04d5783dcd8845c
+# hash: 5401acc4d8ac271fa797781566411f512f1b023d1112cd7e0da6e674006bab6d
