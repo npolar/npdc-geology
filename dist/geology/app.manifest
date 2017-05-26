@@ -23,9 +23,9 @@ https://browser-update.org/update.min.js
 /geology/app.js
 /geology/app.js.map
 /geology/index.html
-/geology/npdc-geology-0.1.0.css
-/geology/npdc-geology-0.1.css
-/geology/npdc-geology-0.css
+/geology/npdc-geology-1.0.0.css
+/geology/npdc-geology-1.0.css
+/geology/npdc-geology-1.css
 /geology/npdc-geology-master-latest.css
 /geology/npdc-geology.css
 /assets/edit/formula.json
@@ -116,7 +116,4 @@ https://browser-update.org/update.min.js
 NETWORK:
 *
 
-SETTINGS:
-prefer-online
-
-# hash: c099a4da635ce559a8ec4312a1d4eee460366e85fb432587451dc9b8bbe6168b
+# hash: 0644eddc55edadfcfcec365ee52d2161eecb33af75c447b36965b43e79f1a8db
