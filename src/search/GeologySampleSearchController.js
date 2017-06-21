@@ -41,9 +41,17 @@ var GeologySampleSearchController = function ($http, $scope, $location, $control
 
       defaults = {
           limit: "50",
-          sort: "-draft='no',updated", //non-drafts should be viewed first
+          sort: "-draft='no',title", //non-drafts should be viewed first
           fields: 'lithology,title,id,collected_year,collection,@placename,files,draft',
           facets: 'lithology,collected_year'};
+
+  /*     defaults = {
+          limit: "50",
+          filter: "draft='no'", //non-drafts should be viewed first
+          sort: "updated",
+          fields: "lithology,title,id,collected_year,collection,@placename,files,draft",
+          facets: 'lithology,collected_year'
+          }; */
 
     let invariants = $scope.security.isAuthenticated() ? {} : {} ;
     return Object.assign({}, defaults, invariants);

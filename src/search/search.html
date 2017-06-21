@@ -2,50 +2,33 @@
 <npdc:search-input feed="feed"></npdc:search-input>
 
 <!DOCTYPE html>
-<div ng-if="security.isAuthorized('create', base_user)">
+<!-- <div ng-if="security.isAuthorized('create', base_user)"> -->
 <md-content layout-padding ng-if="true">
   <span ng-if="feed.opensearch.totalResults > 0">
     {{feed.opensearch.totalResults}} results, displaying {{ feed.entries.length}}
   </span>
-  <span ng-if="showNext()" ><a ng-href="#" ng-click="next()">More</a></span>
-  <span ng-if="feed.opensearch.totalResults == 0">{{ 'search.no_results' | t}} "{{q()}}"<span ng-if="ctrl.hasFilters()">, try <a ng-click="ctrl.removeFilters()">removing all filters</a></span></span>
-<!--  <span ng-show="feed.opensearch.totalResults > 0">@todo FIXME infinite loop[sort by:
-    <a ng-repeat="s in ctrl.sortList" ng-href="{{ctrl.sortHref(s.sort)}}">{{ s.name }} </a>]
-  </span>-->
+ <!-- <span ng-if="showNext()" ><a ng-href="#" ng-click="next()">More</a></span>
+  <span ng-if="feed.opensearch.totalResults == 0">{{ 'search.no_results' | t}} "{{q()}}"<span ng-if="ctrl.hasFilters()">, try <a ng-click="ctrl.removeFilters()">removing all filters</a></span></span> -->
 </md-content>
-</div>
+<!-- </div>  -->
 
 
 <npdc:contributions facets="feed.facets"></npdc:contributions>
-<!-- <npdc:create-button class="np-primary-control"></npdc:create-button> -->
-
-
 
 <div class="npdc-search">
   <md-content>
-
-   <!---
-<div class="np-primary-control">
-<md-button  class="md-fab" ng-if="security.isAuthorized('create', resource.path)" ng-href="{{ resource.newHref() }}">
-  <md-tooltip md-direction="top">New</md-tooltip>
-  <md-icon>add</md-icon>
-</md-button>
-</div>
--->
 
     <section>
       <npdc:loader ng-if="!feed.entries"></npdc:loader>
   <div ng-if="security.isAuthorized('create', base_user)">
        <div class="np-layout-list">
         <md-list>
-        <!-- added ned link -->
-
           <md-list-item class="md-2-line" ng-repeat="e in feed.entries" ng-href="sample/{{ e.id }}">
                <img class="md-avatar" src="{{e.files[0].uri}}" alt="{{ e.files[0].filename }}"  title="ID: {{ e.id }}" />
             <div class="md-list-item-text">
               <h3 class="md-headline">
-             <!--   <span md-highlight-text="q()" md-highlight-flags="ig">{{e.title}}</span> -->
-             <h3 ng-if="e.title"> {{ e.lithology | t }}<em ng-if="e.title">「{{ e.title | t }}」</em></h3>
+         <!--    <h3 ng-if="e.title"> {{ e.lithology | t }}<em ng-if="e.title">「{{ e.lithology | t }}」</em></h3>  -->
+             <h3> {{ e.lithology | t }}<em ng-if="e.title">「{{ e.title | t }}」</em></h3>
               <h4 ng-if="e['@placename']">{{ e['@placename'] | t }}, {{ (e.collected_year).substring(0,10) }}</h4>
             </div>
           </md-list-item>
@@ -66,7 +49,7 @@
 
             <div class="md-list-item-text">
               <h3 class="md-headline">
-             <h3 ng-if="e.title"> {{ e.lithology | t }}<em ng-if="e.title">「{{ e.title | t }}」</em></h3>
+             <h3> {{ e.lithology | t }}<em ng-if="e.title">「{{ e.title | t }}」</em></h3>
               <h4 ng-if="e['@placename']">{{ e['@placename'] | t }}, {{ (e.collected_year).substring(0,10) }}</h4>
             </div>
           </md-list-item>

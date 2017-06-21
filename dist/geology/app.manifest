@@ -15,7 +15,7 @@ https://browser-update.org/update.min.js
 /assets/fullscreen.png
 /assets/fullscreen@2x.png
 /assets/material-icons.css
-/assets/npdc-common-4.10.9.css
+/assets/npdc-common-4.10.11.css
 /assets/npdc-common-4.10.css
 /assets/npdc-common-4.css
 /assets/npdc-common-master-latest.css
@@ -23,7 +23,7 @@ https://browser-update.org/update.min.js
 /geology/app.js
 /geology/app.js.map
 /geology/index.html
-/geology/npdc-geology-1.0.0.css
+/geology/npdc-geology-1.0.1.css
 /geology/npdc-geology-1.0.css
 /geology/npdc-geology-1.css
 /geology/npdc-geology-master-latest.css
@@ -59,6 +59,7 @@ https://browser-update.org/update.min.js
 /assets/img/screenshots/dataset.png
 /assets/img/screenshots/dataset_esri.png
 /assets/img/screenshots/expedition.png
+/assets/img/screenshots/geology.png
 /assets/img/screenshots/publication.png
 /assets/img/screenshots/svalbardkartet.png
 /assets/img/screenshots/tracking.png
@@ -68,6 +69,7 @@ https://browser-update.org/update.min.js
 /assets/img/app-icons/48/dataset.png
 /assets/img/app-icons/48/expedition.png
 /assets/img/app-icons/48/geodata.png
+/assets/img/app-icons/48/geology.png
 /assets/img/app-icons/48/inventory.png
 /assets/img/app-icons/48/map_archive.png
 /assets/img/app-icons/48/marine_biology.png
@@ -89,6 +91,7 @@ https://browser-update.org/update.min.js
 /assets/img/app-icons/96/dataset.png
 /assets/img/app-icons/96/expedition.png
 /assets/img/app-icons/96/geodata.png
+/assets/img/app-icons/96/geology.png
 /assets/img/app-icons/96/inventory.png
 /assets/img/app-icons/96/map_archive.png
 /assets/img/app-icons/96/marine_biology.png
@@ -116,7 +119,4 @@ https://browser-update.org/update.min.js
 NETWORK:
 *
 
-SETTINGS:
-prefer-online
-
-# hash: 096accb40aefebc8f4460dc946edfb394651946e0daac31081a0b4a63f501d20
+# hash: 3750e80e611bcb41278f7c6dae1b7dba1818364a58ad355205739a56f9d61803
