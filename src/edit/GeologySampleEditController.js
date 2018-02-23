@@ -45,6 +45,9 @@ var GeologySampleEditController = function($scope, $controller, $routeParams, Ge
     value: 'name.@value'
   }, $scope.formula);
 
+  formulaAutoCompleteService.autocompleteFacets(['lithology', 'expedition','geologist'], $scope.resource, $scope.formula);
+
+
   let autocompleteFacets = ["geologist"];
   formulaAutoCompleteService.autocompleteFacets(autocompleteFacets, GeologySample, $scope.formula);
 
