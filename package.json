@@ -1,6 +1,6 @@
 {
   "name": "npdc-geology",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Archive for geological samples from the Norwegian polar areas (Svalbard, Dronning Maud Land, Jan Mayen)",
   "main": "gulpfile.js",
   "scripts": {
