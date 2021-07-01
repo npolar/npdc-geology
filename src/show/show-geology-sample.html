@@ -5,7 +5,11 @@
 <div class="np-padding">
   <div ng-if="document" class="np-doc">
     <h1>
-          <a ng-repeat="file in document.files" ng-href="{{file.uri}}"><img src="{{file.uri}}" alt="{{ file.filename }}" style="image-orientation: from-image;width:114px;height:114px;"></a>
+          <a ng-repeat="file in document.files" ng-href="{{file.uri}}">
+              <div ng-if=" file.type == 'image/jpeg' ">
+                  <img src="{{file.uri}}" alt="{{ file.filename }}" style="image-orientation: from-image;width:114px;height:114px;">
+                   </div>
+</a>
   <span class="md-display-2">{{ document.lithology }} </span><span style={font-size:15%}>
 [{{document.title}}]</span></h1>
 
