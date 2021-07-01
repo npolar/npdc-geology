@@ -40,7 +40,7 @@
 </section>
 
  <section>
-        <h3>{{ 'Photos' | t }}</h3>
+        <h3>{{ 'Files' | t }}</h3>
           <md-divider></md-divider>
           <div ng-repeat="file in document.files">
          <p><md-icon>file_download</md-icon> <a ng-href="{{file.uri+'?key='+key()}}">{{ file.filename}}</a>&nbsp; ({{ file.type }} {{ file.file_size | bytes }})</p>
